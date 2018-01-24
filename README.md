@@ -2,6 +2,13 @@
 
 Magento uses Web API to cover the persistence operations of the business entities from the external clients. Some integrations require massive invocation of the Web API while persisting entities from the external systems. Usually it causes perfoemance and scalability issues both on the Magento system and on the external clients. This project is intended to provide a way for persisting big amounts of data in the Magento in efficient scalable way for the external system.
 
+## Repositories
+
+Bulk API track consists of 3 repositories:
+- current, https://github.com/magento-engcom/bulk-api is for documentation and tasks tracking
+- https://github.com/magento/bulk-api-ce is for contributions to the CE part of the Bulk API scope
+- https://github.com/magento/bulk-api-ee is for contribution to the EE part of the scope
+
 ## Goals
 
 1. Implement support of asynchronous invocation of the magento Web API endpoints: requested operation should not be performed imediatedly, but rather saved to the queue for the later processing.
@@ -26,13 +33,6 @@ Currently, all the functionality of the Message Queue and RabbitMQ integration i
 All the [Solution Partners](https://magento.com/find-a-partner) of Magento and developers affiliated with them should have access to the EE repositories for this project. If you don't have it yet, please write us at engcom@magento.com
 
 If you are not the Solution Partner but still want to contribute, completion of moving of the Message Queue interfaces to CE should be a prerequisite for this task.
-
-## Repositories
-
-Bulk API track consists of 3 repositories:
-- current, https://github.com/magento-engcom/bulk-api is for documentation and tasks tracking
-- https://github.com/magento/bulk-api-ce is for contributions to the CE part of the Bulk API scope
-- https://github.com/magento/bulk-api-ee is for contribution to the EE part of the scope
 
 ## Building the code of Magento from repositories
 
