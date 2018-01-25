@@ -34,7 +34,9 @@ All the [Solution Partners](https://magento.com/find-a-partner) of Magento and d
 
 If you are not the Solution Partner but still want to contribute, completion of moving of the Message Queue interfaces to CE should be a prerequisite for this task.
 
-## Building the code of Magento from repositories
+## Installation
+
+### Building the code of Magento from repositories
 
 ```
 git clone https://github.com/magento/bulk-api-ce.git
@@ -43,4 +45,42 @@ git clone https://github.com/magento/bulk-api-ee.git
 php -f bulk-api-ee/dev/tools/build-ee.php -- --ce-source=. --ee-source=bulk-api-ee --command=link
 ```
 This will clone the repositories and create symlinks from the EE to CE. PLease note that EE is cloned to the subdirectory of CE. This is needed to resolve the templates files references.
+
+### Running RabbitMQ
+
+1. Start Docker container for RabbitMQ 3 with the management plugin and expose AMQP port and Admin UI port:
+```
+docker run --hostname localhost -p 5672:5672 -p 15672:15672 rabbitmq:3-management
+```
+2. Go to http://localhost:15672/ login:guest, password:gust to check the statuses of the exchanges and queues
+
+### Installing Magento connected to RabbitMQ
+
+```
+bin/magento setup:install 
+--backend-frontname="admin" 
+--amqp-host="localhost" 
+--amqp-port="5672" 
+--amqp-user="guest" 
+--amqp-password="guest" 
+--db-host="localhost" 
+--db-name="bulk_api_ce" 
+--db-user="root" 
+--db-password="root" 
+--admin-user="admin" 
+--admin-password="admin123" 
+--admin-email="vranen@gmail.com" 
+--admin-firstname="Eugene" 
+--admin-lastname="Tulika" 
+--base-url="magento.url" 
+--cleanup-database
+```
+### Trying out PoC code
+
+1. Setup Postman
+2. Create Integration in the Magento backend
+3. Send Web API request to Magento and ensure that it works
+4. add `/async` prefix to the Web API endpoint `rest/async/V1/order/3/ship` => `rest/V1/order/3/ship`
+5. Sed request. Navigate to RabbitMQ and see message in the Queue
+6. Navigate to the System => Bulk Actions to see the UI of bulk operations and new operation there
 
