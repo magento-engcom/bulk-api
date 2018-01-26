@@ -80,7 +80,47 @@ bin/magento setup:install
 1. Setup Postman
 2. Create Integration in the Magento backend
 3. Send Web API request to Magento and ensure that it works
-4. add `/async` prefix to the Web API endpoint `rest/async/V1/order/3/ship` => `rest/V1/order/3/ship`
-5. Sed request. Navigate to RabbitMQ and see message in the Queue
+```
+http://magento.loc/rest/V1/products POST
+
+{
+    "product": {
+        "sku": "simple-attempt-1-request-1",
+        "type_id": "simple",
+        "attribute_set_id": "4",
+        "price": "12.22",
+        "name": "new_name_simple-attempt-1-request-1",
+        "extension_attributes": {
+            "stock_item": {
+                "qty": 0
+            }
+        },
+        "custom_attributes": [
+            {
+                "attribute_code": "ap21_size_code",
+                "value": "123"
+            },
+            {
+                "attribute_code": "ap21_style_code",
+                "value": "abc"
+            },
+            {
+                "attribute_code": "special_price",
+                "value": "12.11"
+            },
+            {
+                "attribute_code": "color",
+                "value": "4121"
+            },
+            {
+                "attribute_code": "size",
+                "value": "3242"
+            }
+        ]
+    }
+}
+```
+4. add `/async` prefix to the Web API endpoint `rest/V1/products` => `rest/async/V1/products`
+5. Sned request. Navigate to RabbitMQ and see message in the Queue
 6. Navigate to the System => Bulk Actions to see the UI of bulk operations and new operation there
 
