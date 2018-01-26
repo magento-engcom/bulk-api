@@ -121,6 +121,6 @@ http://magento.loc/rest/V1/products POST
 }
 ```
 4. add `/async` prefix to the Web API endpoint `rest/V1/products` => `rest/async/V1/products`
-5. Sned request. Navigate to RabbitMQ and see message in the Queue
+5. Send request. Navigate to RabbitMQ and see message in the Queue
 6. Navigate to the System => Bulk Actions to see the UI of bulk operations and new operation there
 
