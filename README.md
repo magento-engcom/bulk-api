@@ -52,7 +52,7 @@ This will clone the repositories and create symlinks from the EE to CE. PLease n
 ```
 docker run --hostname localhost -p 5672:5672 -p 15672:15672 rabbitmq:3-management
 ```
-2. Go to http://localhost:15672/ login:guest, password:gust to check the statuses of the exchanges and queues
+2. Go to http://localhost:15672/ login:guest, password:guest to check the statuses of the exchanges and queues
 
 ### Installing Magento connected to RabbitMQ
 
