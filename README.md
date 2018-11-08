@@ -1,3 +1,5 @@
+Archived in favor of https://github.com/magento/async-import
+
 # Bulk API Project
 
 Magento uses Web API to cover the persistence operations of the business entities from the external clients. Some integrations require massive invocation of the Web API while persisting entities from the external systems. Usually it causes performance and scalability issues both on the Magento system and on the external clients. This project is intended to provide a way for persisting big amounts of data in the Magento in efficient scalable way for the external system.
