@@ -1,6 +1,6 @@
 # Bulk API Project
 
-Magento uses Web API to cover the persistence operations of the business entities from the external clients. Some integrations require massive invocation of the Web API while persisting entities from the external systems. Usually it causes perfoemance and scalability issues both on the Magento system and on the external clients. This project is intended to provide a way for persisting big amounts of data in the Magento in efficient scalable way for the external system.
+Magento uses Web API to cover the persistence operations of the business entities from the external clients. Some integrations require massive invocation of the Web API while persisting entities from the external systems. Usually it causes performance and scalability issues both on the Magento system and on the external clients. This project is intended to provide a way for persisting big amounts of data in the Magento in efficient scalable way for the external system.
 
 ## Repositories
 
@@ -11,9 +11,9 @@ Bulk API track consists of 3 repositories:
 
 ## Goals
 
-1. Implement support of asynchronous invocation of the magento Web API endpoints: requested operation should not be performed imediatedly, but rather saved to the queue for the later processing.
+1. Implement support of asynchronous invocation of the magento Web API endpoints: requested operation should not be performed immediately, but rather saved to the queue for the later processing.
 2. Support invocation of the CRUD APIs with the multiple entities in one request
-3. Support of the status tracking API for asyncronous operations
+3. Support of the status tracking API for asynchronous operations
 4. Improve performance of persistence operations for the key entities like catalog in the Magento business logic. Resolve deadlocks.
 
 ## Design
@@ -22,7 +22,7 @@ High Level design for asynchronous operations: https://github.com/magento-engcom
 
 ## Tasks Board
 
-We are using [ZenHub](https://www.zenhub.com/) board to manage stories and tasks and build burndown chart for them. Please install browser pluin to get all teh features of this application.
+We are using [ZenHub](https://www.zenhub.com/) board to manage stories and tasks and build burndown chart for them. Please install browser plugin to get all the features of this application.
 
 The Kanban board: https://app.zenhub.com/workspace/o/magento-engcom/bulk-api
 
@@ -69,7 +69,7 @@ bin/magento setup:install
 --db-password="root" 
 --admin-user="admin" 
 --admin-password="admin123" 
---admin-email="vranen@gmail.com" 
+--admin-email="vranen@example.com" 
 --admin-firstname="Eugene" 
 --admin-lastname="Tulika" 
 --base-url="magento.url" 
